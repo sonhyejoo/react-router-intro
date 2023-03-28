@@ -7,30 +7,39 @@ function App() {
   return (
     <div className="main">
       <h1>App Component</h1>
-      <nav>
+      <nav className="comp">
         <ul>
           <li>
-            <NavLink exact to="/">
+            <NavLink
+              activeStyle={{ fontWeight: "bold" }}
+              activeClassName="purple"
+              exact
+              to="/"
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/stocks">
+            <NavLink
+              activeStyle={{ fontWeight: "bold" }}
+              activeClassName="purple"
+              exact
+              to="/stocks"
+            >
               Stocks
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/movies">
+            <NavLink
+              activeStyle={{ fontWeight: "bold" }}
+              activeClassName="purple"
+              exact
+              to="/movies"
+            >
               Movies
             </NavLink>
           </li>
-          <li>
-            <NavLink exact to="/">
-              Home
-            </NavLink>
-          </li>
         </ul>
-        <comp></comp>
       </nav>
       <Switch>
         <Route exact path="/">
@@ -41,6 +50,9 @@ function App() {
         </Route>
         <Route path="/movies">
           <Movies />
+        </Route>
+        <Route path="/not-logged-in">
+          <h1>You must be logged in to enter.</h1>
         </Route>
         <Route path="/">
           <h1>Page not found</h1>
