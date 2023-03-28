@@ -1,12 +1,37 @@
 import Home from "./components/Home";
 import Stocks from "./components/Stocks";
 import Movies from "./components/Movies";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, NavLink } from "react-router-dom";
 
 function App() {
   return (
     <div className="main">
       <h1>App Component</h1>
+      <nav>
+        <ul>
+          <li>
+            <NavLink exact to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink exact to="/stocks">
+              Stocks
+            </NavLink>
+          </li>
+          <li>
+            <NavLink exact to="/movies">
+              Movies
+            </NavLink>
+          </li>
+          <li>
+            <NavLink exact to="/">
+              Home
+            </NavLink>
+          </li>
+        </ul>
+        <comp></comp>
+      </nav>
       <Switch>
         <Route exact path="/">
           <Home />
